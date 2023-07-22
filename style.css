@@ -1,0 +1,27 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 8px;
+}
+
+#top-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#types {
+    display: flex;
+    overflow-x: auto;
+}
+
+#types button {
+    white-space: nowrap;
+}
+
+#videos button {
+    width: 100%;
+}
