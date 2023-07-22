@@ -6,16 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youtube Clone</title>
   <link rel="stylesheet" href="style.css">
+  <script src="customElements.js"></script>
+  <script src="index.js"></script>
 </head>
 
 <body>
+
+  <template id="template-header-buttons">
+    <button type="button" onclick="toggleSidepanel()">hamburgher</button>
+    <a href="https://www.youtube.com/">
+      <img src="" alt="logo">
+    </a>
+  </template>
+  
+
   <header>
     <div id="top-header">
       <div>
-        <button type="button">hamburgher</button>
-        <a href="https://www.youtube.com/">
-          <img src="" alt="logo">
-        </a>
+        <header-buttons></header-buttons>
       </div>
       <div>
         <button type="button">search</button>
@@ -133,6 +141,13 @@
       </a>
     </li>
   </ul>
+  <div id="sidepanel">
+    <header>
+      <header-buttons></header-buttons>
+    </header>
+    <ul>
+    </ul>
+  </div>
 </body>
 
 </html>

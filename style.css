@@ -1,3 +1,16 @@
+body {
+    margin: 0;
+}
+
+#sidepanel {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -5,7 +18,7 @@ ul {
 
 header {
     position: sticky;
-    top: 8px;
+    top: 0;
 }
 
 #top-header {
@@ -20,8 +33,4 @@ header {
 
 #types button {
     white-space: nowrap;
-}
-
-#videos button {
-    width: 100%;
 }
