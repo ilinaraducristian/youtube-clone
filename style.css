@@ -2,18 +2,15 @@ body {
     margin: 0;
 }
 
-#sidepanel {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-}
-
 ul {
     list-style: none;
     padding: 0;
+}
+
+.clearButton {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 header {
@@ -33,4 +30,19 @@ header {
 
 #types button {
     white-space: nowrap;
+}
+
+#videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidepanel {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }

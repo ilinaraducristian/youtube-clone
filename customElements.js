@@ -1,15 +1,16 @@
 "use strict";
 
-customElements.define(
-    "header-buttons",
+function defineBasicCustomElement(name, templateId) {
+  customElements.define(
+    name,
     class extends HTMLElement {
       constructor() {
         super();
-        let template = document.getElementById("template-header-buttons");
-        let templateContent = template.content;
-  
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        shadowRoot.appendChild(templateContent.cloneNode(true));
+        this.attachShadow({ mode: "open" }).appendChild(document.getElementById(templateId).content.cloneNode(true));
       }
     },
   );
+}
+
+defineBasicCustomElement("header-buttons", "template-header-buttons");
+defineBasicCustomElement("video-li", "template-video");
