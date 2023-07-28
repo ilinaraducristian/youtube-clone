@@ -1,15 +1,39 @@
 "use strict";
 
+let sidepanelElement;
+let sidePanelOverlayElement;
+
+function getElementById(id) {
+    const element = document.getElementById(id);
+    if (element === null) throw new Error(`The ${id} element doesn't exist.`);
+    return element;
+}
+
+window.onload = () => {
+    sidepanelElement = getElementById("sidePanel");
+    sidePanelOverlayElement = getElementById("sidePanelOverlay");
+};
+
+window.onresize = () => {
+    if (window.innerWidth >= 1300) {
+        if (sidePanelOverlayElement.className === 'toggled') {
+            sidePanelOverlayElement.className = '';
+        }
+    }
+};
+
 function toggleSidepanel() {
-    const sidepanelElement = document.getElementById("sidepanel");
-    const bodyElement = document.querySelector("body");
-    if (sidepanelElement === null) throw new Error("The sidepanel element doesn't exist.");
-    if (bodyElement === null) throw new Error("The body element doesn't exist.");
-    if (sidepanelElement.style.display === "none" || sidepanelElement.style.display === "") {
-        sidepanelElement.style.display = "block";
-        bodyElement.style.overflowY = "hidden";
+    if (window.innerWidth >= 1300) {
+        if (sidepanelElement.className === '') {
+            sidepanelElement.className = 'expanded';
+        } else {
+            sidepanelElement.className = '';
+        }
     } else {
-        sidepanelElement.style.display = "none";
-        bodyElement.style.overflowY = "";
+        if (sidePanelOverlayElement.className === 'toggled') {
+            sidePanelOverlayElement.className = '';
+        } else {
+            sidePanelOverlayElement.className = 'toggled';
+        }
     }
 }

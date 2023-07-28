@@ -1,48 +1,121 @@
 body {
     margin: 0;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidePanelButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    fill: white;
+}
+
+.sidePanelButton svg {
+    width: 24px;
+    height: 24px;
+}
+
+.logo {
+    width: 90px;
+    height: 20px;
+    fill: white;
+}
+
+#center {
+    display: none;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.clearButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-header {
-    position: sticky;
-    top: 0;
-}
-
-#top-header {
+#categories {
     display: flex;
-    justify-content: space-between;
+    margin: 1em 0;
 }
 
-#types {
+main {
     display: flex;
-    overflow-x: auto;
 }
 
-#types button {
-    white-space: nowrap;
+#sidePanel {
+    width: 4.5em;
 }
 
 #videos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-#sidepanel {
+#sidePanelOverlay {
     display: none;
-    position: fixed;
-    left: 0;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
     top: 0;
+    left: 0;
     height: 100vh;
+    width: 15em;
+}
+
+#sidePanelOverlay.toggled {
+    display: flex;
+}
+
+#sidePanelOverlay ul {
     overflow-y: auto;
+}
+
+@media only screen and (min-width: 650px) {
+    #center {
+        display: block;
+    }
+
+    #magnifier {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 680px) {
+    #videos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    #videos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    #sidePanel.expanded {
+        width: 15em;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    #videos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1730px) {
+    #videos {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 2060px) {
+    #videos {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
 }
